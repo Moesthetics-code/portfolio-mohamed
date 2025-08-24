@@ -12,7 +12,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "npx gh-pages -d dist",
+    "build-gh": "npm run build && rm -rf docs && mv build docs"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
