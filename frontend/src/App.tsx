@@ -19,12 +19,6 @@ import CreateProject from './components/CreateProject';
 import AdminProjects from './components/AdminProjects';
 import AdminSkills from './components/AdminSkills';
 
-// // Pages admin (à créer si elles n'existent pas encore)
-// import AdminDashboard from './pages/admin/Dashboard';
-// import AdminSkills from './pages/admin/Skills';
-// import AdminTags from './pages/admin/Tags';
-// import AdminMessages from './pages/admin/Messages';
-
 import { initializeTheme } from './utils/theme';
 import './styles/animations.css';
 import AdminContacts from './components/AdminContacts';
@@ -71,8 +65,13 @@ function App() {
     initializeTheme();
   }, []);
 
+  // Configuration du basename pour GitHub Pages
+  const basename = process.env.NODE_ENV === 'production' 
+    ? '/portfolio-mohamed' 
+    : '';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="flex flex-col min-h-screen dark:bg-gray-900 dark:text-white">
         <CustomCursor />
         <Routes>
@@ -86,7 +85,7 @@ function App() {
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminProjects />} />
             <Route path="projects" element={<AdminProjects />} />
-            <Route path="projects/create" element={<CreateProject />} /> {/* Nouvelle route */}
+            <Route path="projects/create" element={<CreateProject />} />
             <Route path="skills" element={<AdminSkills />} />
             <Route path="contact" element={<AdminContacts />} />
             <Route path="projects/edit/:id" element={<CreateProject />} />
