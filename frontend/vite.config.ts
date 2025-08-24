@@ -8,7 +8,4 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  build: {
-    outDir: 'dist', // Vite utilise 'dist' par défaut, pas 'build'
-  }
 });
