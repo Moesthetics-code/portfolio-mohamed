@@ -13,7 +13,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "npx gh-pages -d dist",
-    "build-gh": "npm run build && rm -rf docs && mv build docs"
+    "build-deploy": "vite build && powershell \"if(Test-Path docs){Remove-Item docs -Recurse -Force}; Move-Item dist docs\""
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
