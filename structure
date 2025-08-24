@@ -1,0 +1,10 @@
+mon-projet/
+├── backend/
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── .env
+│   └── client/        ← contient le build React
+├── frontend/
+│   ├── package.json
+│   ├── public/
+│   ├── src/
